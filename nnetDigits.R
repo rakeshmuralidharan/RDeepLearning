@@ -18,7 +18,7 @@ barplot(table(digits.y))
 
 ## build a simple nnet using caret wrapper function...
 set.seed(1234)
-digits.m1 = train(x = digits.X, y = digits.y, method = "nnet", 
+digits.m1 = caret::train(x = digits.X, y = digits.y, method = "nnet", 
                   tuneGrid = expand.grid(.size = c(5), .decay = 0.1),
                   trControl = trainControl(method = "none"), MaxNWts = 10000,
                   maxit = 100)
@@ -28,7 +28,7 @@ caret::confusionMatrix(digits.y,digits.yhat1)
 
 ## rerun using increased number of hidden neurons...
 set.seed(1234)
-digits.m2 = train(x = digits.X, y = digits.y, method = "nnet", 
+digits.m2 = caret::train(x = digits.X, y = digits.y, method = "nnet", 
                   tuneGrid = expand.grid(.size = c(10), .decay = 0.1),
                   trControl = trainControl(method = "none"), MaxNWts = 50000,
                   maxit = 100)

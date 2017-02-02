@@ -1,7 +1,7 @@
 ## install.packages("checkpoint")
-library(checkpoint)
+#library(checkpoint)
 
-checkpoint("2017-01-24", R.version = "3.3.1")
+#checkpoint("2017-01-24", R.version = "3.3.1")
 
 ## Chapter 1
 library(RCurl)
@@ -22,3 +22,8 @@ library(RSNNS)
 library(deepnet)
 library(darch)
 library(h2o)
+
+## Chapter 2
+library(parallel)
+library(foreach)
+library(doSNOW)
